@@ -2,17 +2,10 @@
 
 namespace CoverageTest
 {
-	class MainClass
+	public class MainClass
 	{
-		static Random rnd;
-
 		public static void Main (string[] args)
 		{
-			rnd = new Random ();
-			Console.WriteLine ("Hello World!");
-			ALoop (rnd.Next (10, 100));
-			ARandomBranchLoop (rnd.Next (10, 100));
-			NeverFail ();
 		}
 
 		public static void ALoop (int n)
@@ -24,7 +17,7 @@ namespace CoverageTest
 			Console.WriteLine ("");
 		}
 
-		public static void ARandomBranchLoop (int n)
+		public static void ARandomBranchLoop (Random rnd, int n)
 		{
 			Console.WriteLine ("Random looping {0} times", n);
 			for (int i = 0; i < n; i++) {
